@@ -1,0 +1,6 @@
+#include "../../Flutter/Flutter-Release.xcconfig"
+#include "Warnings.xcconfig"
+
+// Ship both native CPU architectures, independent of the build host.
+ARCHS = x86_64 arm64
+ONLY_ACTIVE_ARCH = NO
