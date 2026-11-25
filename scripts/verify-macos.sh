@@ -8,7 +8,7 @@ while IFS= read -r -d '' binary; do
   description=$(file -b "$binary")
   case "$description" in
     *Mach-O*)
-      xcrun lipo -verify_arch x86_64 arm64 "$binary" || {
+      xcrun lipo "$binary" -verify_arch x86_64 arm64 || {
         echo "ERROR: missing Intel or Apple Silicon architecture: $binary" >&2
         exit 1
       }
